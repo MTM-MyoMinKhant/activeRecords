@@ -1,0 +1,38 @@
+body {
+    background-color: cadetblue;
+    color: white;
+}
+
+.pad {
+    padding-top: 30px;
+}
+
+.pad2 {
+    padding-top: 10px;
+}
+
+.right {
+    float: right;
+}
+
+.left {
+    float: left;
+}
+
+.header {
+    display: inline-block;
+}
+
+.center {
+    text-align: center;
+}
+
+.r-link {
+    font-size: 20px;
+    text-align: center;
+    color: black;
+    text-decoration: none;
+}
+
+
+

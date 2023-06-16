@@ -1,0 +1,15 @@
+<h1 class="header">Create New Author</h1>
+<a href="/authors" class="btn right">Authors List</a>
+
+<%= form_with model: @author, class: "center pad" do |form|  %>
+    <div class="left">
+        <%= form.label :name , "Author Name" %> <br>
+        <%= form.text_field :name %>
+        <% if @author.errors[:name].any? %>
+            <div><%= @author.errors.full_messages_for(:name).first %></div>
+        <% end %>   
+    <div>
+    <div class="pad2">
+        <%= form.submit %>
+    </div>
+<% end %>

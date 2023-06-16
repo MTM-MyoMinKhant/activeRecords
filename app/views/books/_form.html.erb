@@ -1,0 +1,27 @@
+<%= form_with model: [author, author.books.build], url: @url , method: @method , class: "center pad" do |form|  %>
+    <div>
+        <%= form.label :name , "Book Name" %> <br>
+        <%= form.text_field :name ,  value: (@book.persisted? ? @book.name : params[:book]&.fetch(:name, "")) %> 
+        <%= form.hidden_field :author_id, value: @author_id %>
+        <% if @book.errors[:name].any? %>
+            <div><%= @book.errors.full_messages_for(:name).first %></div>
+        <% end %>  
+    <div>
+    <div>
+        <%= form.label :volume , "Volume" %> <br>
+        <%= form.text_field :volume , value: (@book.persisted? ? @book.volume : params[:book]&.fetch(:volume, "")) %>
+        <% if @book.errors[:volume].any? %>
+            <div><%= @book.errors.full_messages_for(:volume).first %></div>
+        <% end %>  
+    <div>
+    <div>
+        <%= form.label :price , "Price" %> <br>
+        <%= form.text_field :price ,  value: (@book.persisted? ? @book.price : params[:book]&.fetch(:price, "")) %>
+        <% if @book.errors[:price].any? %>
+            <div><%= @book.errors.full_messages_for(:price).first %></div>
+        <% end %>  
+    <div>
+    <div class="pad2">
+        <%= form.submit %>
+    </div>
+<% end %>

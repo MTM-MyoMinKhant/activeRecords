@@ -1,0 +1,27 @@
+<%= form_with url:"/authors/#{@author_id}/books/#{params[:id]}", method: :put,  class: "center pad" do |form|  %>
+    <div>
+        <%= form.label :name , "Book Name" %> <br>
+        <%= form.text_field :name , value: @book.name %> 
+        <%= form.hidden_field :author_id, value: @author_id %>
+        <% if @book.errors[:name].any? %>
+            <div><%= @book.errors.full_messages_for(:name).first %></div>
+        <% end %>  
+    <div>
+    <div>
+        <%= form.label :volume , "Volume" %> <br>
+        <%= form.text_field :volume , value: @book.volume %>
+        <% if @book.errors[:volume].any? %>
+            <div><%= @book.errors.full_messages_for(:volume).first %></div>
+        <% end %>  
+    <div>
+    <div>
+        <%= form.label :price , "Price" %> <br>
+        <%= form.text_field :price , value: @book.price %>
+        <% if @book.errors[:price].any? %>
+            <div><%= @book.errors.full_messages_for(:price).first %></div>
+        <% end %>  
+    <div>
+    <div class="pad2">
+        <%= form.submit %>
+    </div>
+<% end %>

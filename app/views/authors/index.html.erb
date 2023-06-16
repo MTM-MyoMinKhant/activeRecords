@@ -1,0 +1,17 @@
+<h1 class="header">Authors List</h1>
+<a href="authors/new" class="btn right">Create new Author</a>
+
+<div class="container text-center pad">
+    <div class="row align-items-start">
+        <% @authors.each do |author| %>
+            <div class="col-4">
+                <h2 class="center"><%= author.name %> </h2>
+                <a href="authors/<%= author.id %>/books/new" class="btn">Add new Book</a>
+                <%= button_to 'Delete Author', author_path(author),
+                    method: :delete, data: { confirm: 'Are you sure you want to delete this author?'},
+                    class: 'btn' %>
+                <a href="authors/<%= author.id %>/books" class="btn">Book Lists </a>
+            </div>
+        <% end %>           
+    </div>
+</div>
