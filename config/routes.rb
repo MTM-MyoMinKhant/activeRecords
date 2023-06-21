@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   resources "authors" do
     resources :books
   end
+  get "/account/show" , to: "accounts#show"
 end
